@@ -1,11 +1,19 @@
-from PIL import Image
 import numpy
 from cryptography.fernet import Fernet
+from utils.bit_utils import add_delimiter
+from utils.image_utils import encode_image
 
 file_path = 'example_key.txt'
 
 password = input("Input password: ")
 image_path = input("Input image path: ")
+
+try:
+    open (image_path, 'r')
+except FileNotFoundError:
+    print(f"Error: The file '{image_path}' was not found.")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 try:
     with open (file_path, 'r') as file:
@@ -25,5 +33,9 @@ password_bytes = password.encode()
 
 encrypted_token = f.encrypt(password_bytes)
 
-print ("Password: ", password)
-print ("Encrypted token: ", encrypted_token)
+token = add_delimiter(encrypted_token)
+
+#print ("Password: ", password)
+#print ("Encrypted token: ", encrypted_token)
+
+encode_image(image_path, token)
