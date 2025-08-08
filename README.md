@@ -27,3 +27,37 @@ Supports both encoding (hiding) and decoding (retrieving) messages from PNG imag
    ```bash
    git clone https://github.com/DrewB-5/Steganography-Tool.git
    cd steganography-tool
+2. Install Dependencies:
+   ```bash
+   pip install -r requirements.txt
+
+---
+
+## Usage
+- Work in progress
+
+---
+
+## Project Structure
+steganograpy_tool/
+│
+├── encode.py               # CLI script for embedding messages
+├── decode.py               # CLI script for extracting messages
+├── utils/
+│   ├── bit_utils.py        # Text↔Bits conversion, delimiter handling
+│   ├── image_utils.py      # Pixel-level LSB encoding/decoding
+|
+├── encoded_image.png       # Example encoded image
+├── test_image.png          # Example test image
+|
+├── fernet_keygen.py        # Encyption key generator
+├── example_key.txt         # Example key
+|
+├── requirements.txt        # Dependencies list
+└── README.md               # Project documentation
+
+---
+
+## Limitations
+- Only works reliably with lossless formats (PNG, BMP).
+- The image must have enough pixels to store the message.
