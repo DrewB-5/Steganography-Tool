@@ -1,4 +1,3 @@
-import numpy
 from cryptography.fernet import Fernet
 from utils.bit_utils import add_delimiter
 from utils.image_utils import encode_image

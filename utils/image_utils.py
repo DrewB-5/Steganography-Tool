@@ -33,8 +33,32 @@ def encode_image(image_path, bits):
       pixels[x, y] = (r, g, b)
 
     if bit_index >= total_bits:
-        break
+      break
 
-  img.save("encoded.png")
+  img.save("encoded_image.png")
 
 #decode bits from image
+def decode_image(image_path, delimiter="1111111111111110"):
+  img = Image.open(image_path)
+  img = img.convert("RGB")
+  pixels = img.load()
+
+  width, height = img.size
+  bits = ""
+
+  for y in range(height):
+    for x in range(width):
+      r, g, b = pixels[x, y]
+      bits += bin(r)[-1]
+      if bits.endswith(delimiter):
+        return bits[:-len(delimiter)]
+
+      bits += bin(g)[-1]
+      if bits.endswith(delimiter):
+        return bits[:-len(delimiter)]
+
+      bits += bin(b)[-1]
+      if bits.endswith(delimiter):
+        return bits[:-len(delimiter)]
+
+  return bits
