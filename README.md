@@ -56,7 +56,7 @@ Supports both encoding (hiding) and decoding (retrieving) messages from PNG imag
    |
    ├── requirements.txt        # Dependencies list
    └── README.md               # Project documentation
-
+   ```
 ---
 
 ## Limitations
