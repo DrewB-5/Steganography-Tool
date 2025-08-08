@@ -39,22 +39,23 @@ Supports both encoding (hiding) and decoding (retrieving) messages from PNG imag
 ---
 
 ## Project Structure
-steganograpy_tool/
-│
-├── encode.py               # CLI script for embedding messages
-├── decode.py               # CLI script for extracting messages
-├── utils/
-│   ├── bit_utils.py        # Text↔Bits conversion, delimiter handling
-│   ├── image_utils.py      # Pixel-level LSB encoding/decoding
-|
-├── encoded_image.png       # Example encoded image
-├── test_image.png          # Example test image
-|
-├── fernet_keygen.py        # Encyption key generator
-├── example_key.txt         # Example key
-|
-├── requirements.txt        # Dependencies list
-└── README.md               # Project documentation
+   ```pgsql
+   steganograpy_tool/
+   │
+   ├── encode.py               # CLI script for embedding messages
+   ├── decode.py               # CLI script for extracting messages
+   ├── utils/
+   │   ├── bit_utils.py        # Text↔Bits conversion, delimiter handling
+   │   ├── image_utils.py      # Pixel-level LSB encoding/decoding
+   |
+   ├── encoded_image.png       # Example encoded image
+   ├── test_image.png          # Example test image
+   |
+   ├── fernet_keygen.py        # Encyption key generator
+   ├── example_key.txt         # Example key
+   |
+   ├── requirements.txt        # Dependencies list
+   └── README.md               # Project documentation
 
 ---
 
